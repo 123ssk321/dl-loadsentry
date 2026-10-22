@@ -1,0 +1,902 @@
+{
+  "project_slug": "loadsentry",
+  "first_public_result_month": 6,
+  "total_hours": 652,
+  "reserve_hours": 144,
+  "milestones": [
+    {
+      "id": "LS-M1",
+      "title": "Scope, rights and laptop feasibility",
+      "description": "Weeks 1–7, months 1–2; phase definition; LS-001–LS-006: 62 task hours + 24 reserve. Exit requires all listed issue checks and evidence."
+    },
+    {
+      "id": "LS-M2",
+      "title": "Internal end-to-end workflow",
+      "description": "Weeks 8–13, months 2–3; phase internal-slice; LS-007–LS-012: 68 task hours + 16 reserve. Exit requires all listed issue checks and evidence."
+    },
+    {
+      "id": "LS-M3",
+      "title": "Models and frozen evaluation",
+      "description": "Weeks 14–21, months 4–5; phase model-evaluation; LS-013–LS-018: 72 task hours + 32 reserve. Exit requires all listed issue checks and evidence."
+    },
+    {
+      "id": "LS-M4",
+      "title": "First functional public release",
+      "description": "Weeks 22–26, month 6; phase public-release; LS-019–LS-024: 64 task hours + 16 reserve. Target first functional public local release at week 26; cumulative 354 hours including reserve."
+    },
+    {
+      "id": "LS-M5",
+      "title": "Local alpha foundations",
+      "description": "Weeks 27–32, months 7–8; phase alpha-core; LS-025–LS-030: 64 task hours + 16 reserve. Exit requires all listed issue checks and evidence."
+    },
+    {
+      "id": "LS-M6",
+      "title": "Usable local alpha",
+      "description": "Weeks 33–39, months 8–9; phase alpha-release; LS-031–LS-036: 60 task hours + 16 reserve. Exit requires all listed issue checks and evidence."
+    },
+    {
+      "id": "LS-M7",
+      "title": "Product and operational validation",
+      "description": "Weeks 40–46, months 10–11; phase product-validation; LS-037–LS-042: 62 task hours + 12 reserve. Exit requires all listed issue checks and evidence."
+    },
+    {
+      "id": "LS-M8",
+      "title": "Final decision and handoff",
+      "description": "Weeks 47–52, months 11–12; phase handoff; LS-043–LS-048: 56 task hours + 12 reserve. Month-12 continue/narrow/park decision; subsequent work needs a new allocation."
+    }
+  ],
+  "issues": [
+    {
+      "id": "LS-001",
+      "title": "Freeze the meter review contract",
+      "body": "## Goal\nFreeze the meter review contract for LoadSentry; deliver the bounded outcome below within 8 hours including verification and documentation.\n\n## Steps\n1. Define consultant persona, hourly kWh input, next-day 24-hour forecast and advisory review queue.\n2. freeze supported workflow and excluded controls.\n\n## Outputs\nPaths relative to the future product repository: docs/SCOPE.md; docs/contracts/meter.schema.json.\n\n## Acceptance checks\nOne folder-to-review-to-export example is specified; activation remains queued; no diagnosis or savings claim.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nNone; project activation is required.\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 8,
+      "milestone": "LS-M1",
+      "depends_on": [],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:definition"
+      ],
+      "phase": "definition"
+    },
+    {
+      "id": "LS-002",
+      "title": "Resolve dataset and software rights",
+      "body": "## Goal\nResolve dataset and software rights for LoadSentry; deliver the bounded outcome below within 10 hours including verification and documentation.\n\n## Steps\n1. Capture BDG2 exact revision and inconsistent license text.\n2. classify download, training, evaluation and redistribution separately.\n3. admit only documented uses and define synthetic fallback.\n\n## Outputs\nPaths relative to the future product repository: data/manifests/rights.json; docs/DATA_RIGHTS.md.\n\n## Acceptance checks\nEach asset has source, checksum, license hash, attribution and allowed-use state; unknown uses remain excluded.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-001\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 10,
+      "milestone": "LS-M1",
+      "depends_on": [
+        "LS-001"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:definition"
+      ],
+      "phase": "definition"
+    },
+    {
+      "id": "LS-003",
+      "title": "Measure laptop feasibility before expanding scope",
+      "body": "## Goal\nMeasure laptop feasibility before expanding scope for LoadSentry; deliver the bounded outcome below within 10 hours including verification and documentation.\n\n## Steps\n1. Use generated 168-hour windows to measure CPU and CUDA training/inference on GTX 1650 Ti.\n2. record installed drivers, PyTorch compatibility, peak VRAM/RAM and elapsed time.\n3. select initial batch size and cohort cap.\n\n## Outputs\nPaths relative to the future product repository: benchmarks/smoke.py; reports/hardware-smoke.json.\n\n## Acceptance checks\nA repeatable smoke run completes below 3.5GB VRAM and 12GB process RAM, or CPU/smaller-model fallback is chosen; all values are measured.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-001, LS-002\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 10,
+      "milestone": "LS-M1",
+      "depends_on": [
+        "LS-001",
+        "LS-002"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:definition"
+      ],
+      "phase": "definition"
+    },
+    {
+      "id": "LS-004",
+      "title": "Define causal splits and evaluation protocol",
+      "body": "## Goal\nDefine causal splits and evaluation protocol for LoadSentry; deliver the bounded outcome below within 10 hours including verification and documentation.\n\n## Steps\n1. Freeze cohort selection by metadata and completeness before errors are seen.\n2. define date partitions and held-out meter IDs.\n3. document data availability at each forecast origin and metric formulas.\n\n## Outputs\nPaths relative to the future product repository: configs/protocol.yaml; docs/EVALUATION.md.\n\n## Acceptance checks\nTraining, selection, calibration and final test intervals are distinct; seen-meter and transfer metrics have separate denominators.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-001, LS-002, LS-003\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 10,
+      "milestone": "LS-M1",
+      "depends_on": [
+        "LS-001",
+        "LS-002",
+        "LS-003"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:definition"
+      ],
+      "phase": "definition"
+    },
+    {
+      "id": "LS-005",
+      "title": "Scaffold the local application and reproducibility environment",
+      "body": "## Goal\nScaffold the local application and reproducibility environment for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Create Python package boundaries for ingestion, features, models, evaluation, reports and CLI.\n2. pin dependencies.\n3. add synthetic-only unit CI and deterministic seed support.\n\n## Outputs\nPaths relative to the future product repository: pyproject.toml; src/loadsentry/; tests/test_install.py; dependency lock.\n\n## Acceptance checks\nClean environment imports CLI offline after installation; no data download or GPU is required for unit CI; licenses are inventoried.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-003, LS-004\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M1",
+      "depends_on": [
+        "LS-003",
+        "LS-004"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:definition"
+      ],
+      "phase": "definition"
+    },
+    {
+      "id": "LS-006",
+      "title": "Implement provenance-aware acquisition and synthetic fixtures",
+      "body": "## Goal\nImplement provenance-aware acquisition and synthetic fixtures for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Download only approved BDG2 files with hashes and retry limits.\n2. select deterministic 50-meter starting cohort when permitted.\n3. generate independent hourly synthetic controls when rights are unresolved.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/acquire.py; src/loadsentry/synthetic.py; data/manifests/cohort.json.\n\n## Acceptance checks\nReruns are idempotent; corrupted download is rejected; generated fixtures reproduce byte-identical data; source and synthetic evidence stay distinct.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-002, LS-004, LS-005\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M1",
+      "depends_on": [
+        "LS-002",
+        "LS-004",
+        "LS-005"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:definition"
+      ],
+      "phase": "definition"
+    },
+    {
+      "id": "LS-007",
+      "title": "Validate hourly meter CSV ingestion",
+      "body": "## Goal\nValidate hourly meter CSV ingestion for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Parse canonical columns meter_id, timestamp, value and unit.\n2. enforce bounded size, numeric validity, explicit timezone and kWh conversion.\n3. quarantine unsupported files with typed errors.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/ingest.py; tests/test_ingest.py.\n\n## Acceptance checks\nNaive timestamps without declared timezone, infinite values, mixed units and oversized files fail with actionable reasons; accepted rows retain source hashes.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-006\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M2",
+      "depends_on": [
+        "LS-006"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:internal-slice"
+      ],
+      "phase": "internal-slice"
+    },
+    {
+      "id": "LS-008",
+      "title": "Implement data-quality evidence and deterministic corruptions",
+      "body": "## Goal\nImplement data-quality evidence and deterministic corruptions for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Detect gaps, duplicates, stale sequences and inconsistent cadence.\n2. generate seeded missing-hour, duplicate, unit-change and timezone-offset cases from controls.\n3. preserve originals.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/quality.py; tests/fixtures/corruptions.py; reports/quality-contract.json.\n\n## Acceptance checks\nEach generated fault has an expected detector outcome; legitimate zeros are not silently treated as missing; DST ambiguity is explicit.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-007\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M2",
+      "depends_on": [
+        "LS-007"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:internal-slice"
+      ],
+      "phase": "internal-slice"
+    },
+    {
+      "id": "LS-009",
+      "title": "Build leakage-proof windows and transformations",
+      "body": "## Goal\nBuild leakage-proof windows and transformations for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Construct past-only 168-hour windows and 24-hour targets.\n2. fit scaling on training only.\n3. purge windows crossing target partition boundaries.\n4. track imputation masks and causal availability.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/windows.py; tests/test_leakage.py.\n\n## Acceptance checks\nSentinel future values cannot alter earlier features; transform fit indices stay in training; held-out building IDs never enter fitted state.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-004, LS-007, LS-008\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M2",
+      "depends_on": [
+        "LS-004",
+        "LS-007",
+        "LS-008"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:internal-slice"
+      ],
+      "phase": "internal-slice"
+    },
+    {
+      "id": "LS-010",
+      "title": "Implement seasonal naive and statistical comparators",
+      "body": "## Goal\nImplement seasonal naive and statistical comparators for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Add previous-day/week persistence and a bounded seasonal regression with calendar features.\n2. derive baseline quantiles from calibration residuals.\n3. implement missing-history abstention.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/models/baselines.py; tests/test_baselines.py.\n\n## Acceptance checks\nAll baselines share origins and horizon; residual calibration excludes test data; insufficient history yields a typed abstention.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-009\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M2",
+      "depends_on": [
+        "LS-009"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:internal-slice"
+      ],
+      "phase": "internal-slice"
+    },
+    {
+      "id": "LS-011",
+      "title": "Build the internal folder-to-report vertical slice",
+      "body": "## Goal\nBuild the internal folder-to-report vertical slice for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Wire CLI ingestion, baseline prediction and quality review into a static local HTML plus JSON report.\n2. show forecast origins, intervals and observed outcomes only when available.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/cli.py; src/loadsentry/report.py; tests/test_vertical_slice.py.\n\n## Acceptance checks\nOne command produces an inspectable report from generated inputs; malformed files do not silently disappear; month-3 internal result is executable.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-008, LS-010\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M2",
+      "depends_on": [
+        "LS-008",
+        "LS-010"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:internal-slice"
+      ],
+      "phase": "internal-slice"
+    },
+    {
+      "id": "LS-012",
+      "title": "Review the internal slice and lock public-release scope",
+      "body": "## Goal\nReview the internal slice and lock public-release scope for LoadSentry; deliver the bounded outcome below within 8 hours including verification and documentation.\n\n## Steps\n1. Run the slice on approved public cohort or marked synthetic fallback.\n2. record workflow friction and resource ceilings.\n3. set supported file count and defer optional features to protect release.\n\n## Outputs\nPaths relative to the future product repository: reports/internal-gate.md; configs/resource-limits.yaml.\n\n## Acceptance checks\nA completed example and failed-input example are attached; continue/narrow/park decision names evidence gaps without claiming customer validation.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-011\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 8,
+      "milestone": "LS-M2",
+      "depends_on": [
+        "LS-011"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:internal-slice"
+      ],
+      "phase": "internal-slice"
+    },
+    {
+      "id": "LS-013",
+      "title": "Train the tabular comparator on identical splits",
+      "body": "## Goal\nTrain the tabular comparator on identical splits for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Implement LightGBM quantile or regression baseline using causal lags/calendar variables.\n2. cap configurations at four.\n3. select on validation and preserve test isolation.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/models/tabular.py; experiments/tabular.yaml.\n\n## Acceptance checks\nTraining completes within smoke-derived budget; feature timestamps are checked; selection result and failed configurations are recorded.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-009, LS-012\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M3",
+      "depends_on": [
+        "LS-009",
+        "LS-012"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:model-evaluation"
+      ],
+      "phase": "model-evaluation"
+    },
+    {
+      "id": "LS-014",
+      "title": "Implement the compact quantile TCN",
+      "body": "## Goal\nImplement the compact quantile TCN for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Build small dilated causal TCN with 168-hour input and 24 by 3 outputs for 0.1/0.5/0.9 quantiles.\n2. constrain quantile order and document parameter count.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/models/tcn.py; tests/test_tcn.py.\n\n## Acceptance checks\nShape, gradient, quantile-order and causal-padding tests pass; batch-one CPU inference works; no pretrained weights are assumed.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-009, LS-012\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M3",
+      "depends_on": [
+        "LS-009",
+        "LS-012"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:model-evaluation"
+      ],
+      "phase": "model-evaluation"
+    },
+    {
+      "id": "LS-015",
+      "title": "Run bounded neural training and reproducibility checks",
+      "body": "## Goal\nRun bounded neural training and reproducibility checks for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Train on normal chronological load data with early stopping and at most four validation configurations.\n2. repeat selected configuration across three seeds.\n3. record resource peaks and checkpoints.\n\n## Outputs\nPaths relative to the future product repository: experiments/tcn.yaml; reports/tcn-training.json.\n\n## Acceptance checks\nA deterministic small rerun matches within declared numeric tolerance; all attempts and compute costs appear; no test-driven hyperparameter changes.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-014\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M3",
+      "depends_on": [
+        "LS-014"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:model-evaluation"
+      ],
+      "phase": "model-evaluation"
+    },
+    {
+      "id": "LS-016",
+      "title": "Calibrate intervals and select deployment model",
+      "body": "## Goal\nCalibrate intervals and select deployment model for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Calibrate each model on held-out calibration dates.\n2. compare pinball loss, MAE and interval coverage/width.\n3. select default under declared DL retention gate.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/calibrate.py; reports/model-selection.json.\n\n## Acceptance checks\nCalibration touches no final-test target; 80% intervals and crossed quantiles are checked; baseline wins remain deployable.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-010, LS-013, LS-015\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M3",
+      "depends_on": [
+        "LS-010",
+        "LS-013",
+        "LS-015"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:model-evaluation"
+      ],
+      "phase": "model-evaluation"
+    },
+    {
+      "id": "LS-017",
+      "title": "Evaluate held-out meters and data-fault resilience",
+      "body": "## Goal\nEvaluate held-out meters and data-fault resilience for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Score frozen known-meter dates and entirely unseen meters separately.\n2. run paired corruption suite.\n3. compute meter/day block uncertainty and resource distributions.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/evaluate.py; reports/frozen-evaluation.json.\n\n## Acceptance checks\nReport all meters, horizons and exclusions; MASE zero denominators are explicit; generated faults are not labeled real equipment anomalies.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-008, LS-016\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M3",
+      "depends_on": [
+        "LS-008",
+        "LS-016"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:model-evaluation"
+      ],
+      "phase": "model-evaluation"
+    },
+    {
+      "id": "LS-018",
+      "title": "Implement ranked advisory findings and abstention",
+      "body": "## Goal\nImplement ranked advisory findings and abstention for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Rank data-quality failures separately from interval exceedances.\n2. attach observed/expected values, interval width, evidence and missing-history reasons.\n3. cap daily queue volume.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/findings.py; tests/test_findings.py.\n\n## Acceptance checks\nEvery item links to its input period and model; quality-failed days do not receive confident forecast-deviation findings; no equipment diagnosis is emitted.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-011, LS-016, LS-017\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M3",
+      "depends_on": [
+        "LS-011",
+        "LS-016",
+        "LS-017"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:model-evaluation"
+      ],
+      "phase": "model-evaluation"
+    },
+    {
+      "id": "LS-019",
+      "title": "Complete the public local review workflow",
+      "body": "## Goal\nComplete the public local review workflow for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Provide local report filters, meter drilldown and CSV/JSON findings export.\n2. neutralize CSV formula injection.\n3. include reproducibility identifiers and limitations.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/export.py; templates/review.html; tests/test_export.py.\n\n## Acceptance checks\nA reviewer can inspect top findings and export without reading code; exported IDs reconcile exactly to report items; keyboard paths work.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-018\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M4",
+      "depends_on": [
+        "LS-018"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:public-release"
+      ],
+      "phase": "public-release"
+    },
+    {
+      "id": "LS-020",
+      "title": "Verify offline privacy and bounded file processing",
+      "body": "## Goal\nVerify offline privacy and bounded file processing for LoadSentry; deliver the bounded outcome below within 10 hours including verification and documentation.\n\n## Steps\n1. Test path traversal, malformed CSV, resource limits and external-network denial.\n2. redact filenames/values from logs.\n3. implement explicit workspace deletion and documented local retention.\n\n## Outputs\nPaths relative to the future product repository: tests/test_privacy.py; docs/PRIVACY.md; src/loadsentry/storage.py.\n\n## Acceptance checks\nNo readings leave the process by default; logs omit raw data; deletion removes original/derived live files and reports any separately retained backup.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-019\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 10,
+      "milestone": "LS-M4",
+      "depends_on": [
+        "LS-019"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:public-release"
+      ],
+      "phase": "public-release"
+    },
+    {
+      "id": "LS-021",
+      "title": "Package and rehearse installation on the target laptop",
+      "body": "## Goal\nPackage and rehearse installation on the target laptop for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Build wheel and pinned environment.\n2. document Windows PowerShell installation and CPU fallback.\n3. rehearse from empty environment on the laptop with approved/generated samples.\n\n## Outputs\nPaths relative to the future product repository: docs/INSTALL.md; scripts/reproduce.ps1; reports/install-smoke.json.\n\n## Acceptance checks\nFresh install runs folder-to-export offline after dependency setup; missing CUDA produces an actionable fallback, not an installation failure.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-019, LS-020\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M4",
+      "depends_on": [
+        "LS-019",
+        "LS-020"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:public-release"
+      ],
+      "phase": "public-release"
+    },
+    {
+      "id": "LS-022",
+      "title": "Prepare the reproducible benchmark and rights-safe release bundle",
+      "body": "## Goal\nPrepare the reproducible benchmark and rights-safe release bundle for LoadSentry; deliver the bounded outcome below within 10 hours including verification and documentation.\n\n## Steps\n1. Generate data/model cards, attribution, dependency SBOM and a synthetic failure gallery.\n2. bundle code/configs and only cleared weights.\n3. provide downloader separately for approved data.\n\n## Outputs\nPaths relative to the future product repository: docs/MODEL_CARD.md; docs/DATA_CARD.md; release/manifest.json.\n\n## Acceptance checks\nEach artifact has checksum and rights state; synthetic fallback is prominent if public data excluded; no unresolved external data enters archive.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-017, LS-021\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 10,
+      "milestone": "LS-M4",
+      "depends_on": [
+        "LS-017",
+        "LS-021"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:public-release"
+      ],
+      "phase": "public-release"
+    },
+    {
+      "id": "LS-023",
+      "title": "Run final public-release acceptance and model cancellation gate",
+      "body": "## Goal\nRun final public-release acceptance and model cancellation gate for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Execute frozen tests and clean-install workflow.\n2. check DL improvement and latency gates.\n3. decide baseline-default or neural-default and document missed targets.\n\n## Outputs\nPaths relative to the future product repository: reports/public-release-gate.md; reports/release-regressions.json.\n\n## Acceptance checks\nFunctional CLI and review/export operate; one compact neural experiment and two baseline families are reproducible; failed DL gate changes default rather than concealing results.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-018, LS-020, LS-021, LS-022\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M4",
+      "depends_on": [
+        "LS-018",
+        "LS-020",
+        "LS-021",
+        "LS-022"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:public-release"
+      ],
+      "phase": "public-release"
+    },
+    {
+      "id": "LS-024",
+      "title": "Publish the first functional local release at month six",
+      "body": "## Goal\nPublish the first functional local release at month six for LoadSentry; deliver the bounded outcome below within 8 hours including verification and documentation.\n\n## Steps\n1. Prepare reviewed version tag and release artifacts in the eventual product repository, after normal publication authority.\n2. verify generated sample tutorial and report download integrity.\n\n## Outputs\nPaths relative to the future product repository: release/v0.1-manifest.json; docs/RELEASE_NOTES.md.\n\n## Acceptance checks\nPublic source/package and functioning local path are verifiable; a README or screenshot alone cannot close this task; release contains no raw restricted data.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-023\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 8,
+      "milestone": "LS-M4",
+      "depends_on": [
+        "LS-023"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:public-release"
+      ],
+      "phase": "public-release"
+    },
+    {
+      "id": "LS-025",
+      "title": "Measure the advisory workflow against spreadsheet review",
+      "body": "## Goal\nMeasure the advisory workflow against spreadsheet review for LoadSentry; deliver the bounded outcome below within 10 hours including verification and documentation.\n\n## Steps\n1. Run 20 counterbalanced generated meter-review tasks with known injected issues.\n2. compare completion time, missed known issues and corrections.\n3. record builder-only bias if no participants.\n\n## Outputs\nPaths relative to the future product repository: experiments/workflow-study.yaml; reports/workflow-study.json.\n\n## Acceptance checks\nReport medians, spread, count and final outcomes; no fault labels are manually created; solo results do not establish demand.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-024\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 10,
+      "milestone": "LS-M5",
+      "depends_on": [
+        "LS-024"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:alpha-core"
+      ],
+      "phase": "alpha-core"
+    },
+    {
+      "id": "LS-026",
+      "title": "Decide whether demand evidence justifies alpha work",
+      "body": "## Goal\nDecide whether demand evidence justifies alpha work for LoadSentry; deliver the bounded outcome below within 8 hours including verification and documentation.\n\n## Steps\n1. Review any existing voluntary feedback, recurring usage and reproducible workflow benefit.\n2. optionally prepare an owner-led demonstration packet without sending outreach.\n3. record proceed/narrow/park.\n\n## Outputs\nPaths relative to the future product repository: reports/alpha-decision.md; docs/DEMO_SCRIPT.md.\n\n## Acceptance checks\nNo interview is a build prerequisite; absent users is recorded as unvalidated; recurring operational pain is not inferred from downloads.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-025\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 8,
+      "milestone": "LS-M5",
+      "depends_on": [
+        "LS-025"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:alpha-core"
+      ],
+      "phase": "alpha-core"
+    },
+    {
+      "id": "LS-027",
+      "title": "Design versioned local job and review storage",
+      "body": "## Goal\nDesign versioned local job and review storage for LoadSentry; deliver the bounded outcome below within 10 hours including verification and documentation.\n\n## Steps\n1. Define SQLite jobs, immutable input manifests, model/config versions and finding review revisions.\n2. add schema migrations and crash-state rules.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/db.py; migrations/; tests/test_migrations.py.\n\n## Acceptance checks\nA failed or interrupted run is recoverable and identifiable; accepted review state references immutable evidence.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-026\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 10,
+      "milestone": "LS-M5",
+      "depends_on": [
+        "LS-026"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:alpha-core"
+      ],
+      "phase": "alpha-core"
+    },
+    {
+      "id": "LS-028",
+      "title": "Add bounded folder import and duplicate prevention",
+      "body": "## Goal\nAdd bounded folder import and duplicate prevention for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Implement explicit folder import with file hash deduplication, partial-write detection and one worker.\n2. optionally poll only an operator-selected folder with bounded interval.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/import_jobs.py; tests/test_import_jobs.py.\n\n## Acceptance checks\nRepeated folder import does not duplicate findings; in-progress files are deferred; full queue and unsupported files yield visible errors.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-027\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M5",
+      "depends_on": [
+        "LS-027"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:alpha-core"
+      ],
+      "phase": "alpha-core"
+    },
+    {
+      "id": "LS-029",
+      "title": "Implement loopback-only application routes",
+      "body": "## Goal\nImplement loopback-only application routes for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Add local HTTP service for jobs, findings and exports.\n2. validate origin, local capability token and payload schemas.\n3. allow only server-owned paths.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/server.py; tests/test_server.py.\n\n## Acceptance checks\nRoutes bind loopback, reject cross-origin write attempts and arbitrary paths; concurrent processing is bounded; restart marks interrupted work.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-027, LS-028\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M5",
+      "depends_on": [
+        "LS-027",
+        "LS-028"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:alpha-core"
+      ],
+      "phase": "alpha-core"
+    },
+    {
+      "id": "LS-030",
+      "title": "Build file-drop and progress UI",
+      "body": "## Goal\nBuild file-drop and progress UI for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Implement local file picker/drop, quality summary and job progress using lightweight templates.\n2. expose recovery steps for rejected files.\n\n## Outputs\nPaths relative to the future product repository: templates/import.html; static/import.js; tests/e2e/import.spec.\n\n## Acceptance checks\nKeyboard upload and failure recovery complete; supported CSV fields and local-only status are clear; no silent background upload.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-029\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M5",
+      "depends_on": [
+        "LS-029"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:alpha-core"
+      ],
+      "phase": "alpha-core"
+    },
+    {
+      "id": "LS-031",
+      "title": "Build review queue with reasons and revision-safe notes",
+      "body": "## Goal\nBuild review queue with reasons and revision-safe notes for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Add sorted findings, per-meter interval chart, reviewed/dismissed/needs-context statuses and optional notes.\n2. guard stale updates with revision IDs.\n\n## Outputs\nPaths relative to the future product repository: templates/queue.html; src/loadsentry/reviews.py; tests/test_reviews.py.\n\n## Acceptance checks\nTwo stale edits cannot silently overwrite; all actions keep original forecast evidence; notes are excluded from model training.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-030\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M6",
+      "depends_on": [
+        "LS-030"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:alpha-release"
+      ],
+      "phase": "alpha-release"
+    },
+    {
+      "id": "LS-032",
+      "title": "Add configuration validation and versioned exports",
+      "body": "## Goal\nAdd configuration validation and versioned exports for LoadSentry; deliver the bounded outcome below within 10 hours including verification and documentation.\n\n## Steps\n1. Provide explicit units/timezone/threshold settings, schema migration and export revisions.\n2. show differences from previous config and model versions.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/config.py; templates/settings.html; tests/test_config.py.\n\n## Acceptance checks\nUnsupported configurations fail before jobs start; exported report includes configuration hash and review version; formula-safe CSV remains valid.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-031\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 10,
+      "milestone": "LS-M6",
+      "depends_on": [
+        "LS-031"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:alpha-release"
+      ],
+      "phase": "alpha-release"
+    },
+    {
+      "id": "LS-033",
+      "title": "Test alpha accessibility and complete-task recovery",
+      "body": "## Goal\nTest alpha accessibility and complete-task recovery for LoadSentry; deliver the bounded outcome below within 10 hours including verification and documentation.\n\n## Steps\n1. Exercise keyboard navigation, labels, readable interval plots and invalid-input guidance.\n2. simulate worker cancellation and restart during import/review.\n\n## Outputs\nPaths relative to the future product repository: tests/e2e/alpha.spec; reports/alpha-usability.md.\n\n## Acceptance checks\nImport-to-review-to-export finishes without source inspection; cancellation preserves completed results and exposes interrupted items.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-032\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 10,
+      "milestone": "LS-M6",
+      "depends_on": [
+        "LS-032"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:alpha-release"
+      ],
+      "phase": "alpha-release"
+    },
+    {
+      "id": "LS-034",
+      "title": "Rebenchmark the full alpha at the supported scale",
+      "body": "## Goal\nRebenchmark the full alpha at the supported scale for LoadSentry; deliver the bounded outcome below within 10 hours including verification and documentation.\n\n## Steps\n1. Measure 50-meter initial and up-to-100-meter expanded cohorts when rights/storage allow.\n2. report cold/warm latency, peak memory and resource ceilings.\n\n## Outputs\nPaths relative to the future product repository: benchmarks/alpha.py; reports/alpha-resource.json.\n\n## Acceptance checks\nExpansion requires measured headroom; CPU daily batch target is checked; unsupported scale is documented rather than silently sampled.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-033\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 10,
+      "milestone": "LS-M6",
+      "depends_on": [
+        "LS-033"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:alpha-release"
+      ],
+      "phase": "alpha-release"
+    },
+    {
+      "id": "LS-035",
+      "title": "Release the month-nine local alpha",
+      "body": "## Goal\nRelease the month-nine local alpha for LoadSentry; deliver the bounded outcome below within 8 hours including verification and documentation.\n\n## Steps\n1. Rehearse signed-off local install/update on generated sample workspace.\n2. publish measured limits and alpha release notes.\n3. freeze versioned evidence.\n\n## Outputs\nPaths relative to the future product repository: release/v0.2-manifest.json; docs/ALPHA_NOTES.md.\n\n## Acceptance checks\nA reviewer can run file-drop, queue and export end to end; release is clearly alpha and lacks unverified operational claims.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-033, LS-034\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 8,
+      "milestone": "LS-M6",
+      "depends_on": [
+        "LS-033",
+        "LS-034"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:alpha-release"
+      ],
+      "phase": "alpha-release"
+    },
+    {
+      "id": "LS-036",
+      "title": "Prepare a permissioned trial protocol with a no-user fallback",
+      "body": "## Goal\nPrepare a permissioned trial protocol with a no-user fallback for LoadSentry; deliver the bounded outcome below within 10 hours including verification and documentation.\n\n## Steps\n1. Define owner-supplied CSV rights, data minimization, on-device processing and deletion procedure.\n2. specify repeated workflow measures.\n3. execute generated-data rehearsal if no willing user.\n\n## Outputs\nPaths relative to the future product repository: docs/TRIAL_PROTOCOL.md; reports/trial-readiness.md.\n\n## Acceptance checks\nNo data collection, contacting people or field deployment occurs automatically; trial/non-trial evidence and consent status are explicit.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-025, LS-026, LS-035\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 10,
+      "milestone": "LS-M6",
+      "depends_on": [
+        "LS-025",
+        "LS-026",
+        "LS-035"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:alpha-release"
+      ],
+      "phase": "alpha-release"
+    },
+    {
+      "id": "LS-037",
+      "title": "Implement retention controls and verified deletion",
+      "body": "## Goal\nImplement retention controls and verified deletion for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Add operator retention setting, startup cleanup and explicit delete action for inputs, features, reports and notes.\n2. define backup retention separately.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/retention.py; tests/test_retention.py; docs/RETENTION.md.\n\n## Acceptance checks\nExpired records disappear from UI, exports and live files; audit metadata contains no raw readings; backup caveat is accurately reported.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-036\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M7",
+      "depends_on": [
+        "LS-036"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:product-validation"
+      ],
+      "phase": "product-validation"
+    },
+    {
+      "id": "LS-038",
+      "title": "Add model/config promotion and rollback",
+      "body": "## Goal\nAdd model/config promotion and rollback for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Version active model and configuration.\n2. compare candidate to frozen baseline suite.\n3. implement atomic promotion, rollback and incompatible-version rejection.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/registry.py; tests/test_promotion.py.\n\n## Acceptance checks\nFailed promotion leaves old default usable; rollback restores model/config pair and preserves historical finding attribution.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-035, LS-037\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M7",
+      "depends_on": [
+        "LS-035",
+        "LS-037"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:product-validation"
+      ],
+      "phase": "product-validation"
+    },
+    {
+      "id": "LS-039",
+      "title": "Add drift summaries without automatic retraining",
+      "body": "## Goal\nAdd drift summaries without automatic retraining for LoadSentry; deliver the bounded outcome below within 10 hours including verification and documentation.\n\n## Steps\n1. Summarize input missingness, scale shifts, interval coverage after outcomes and review volume.\n2. separate quality drift from error drift.\n3. keep alerts advisory.\n\n## Outputs\nPaths relative to the future product repository: src/loadsentry/drift.py; reports/drift-rehearsal.json.\n\n## Acceptance checks\nNo claim is made before enough labeled outcomes exist; changed meter units trigger quarantine; no unseen data automatically changes weights.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-038\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 10,
+      "milestone": "LS-M7",
+      "depends_on": [
+        "LS-038"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:product-validation"
+      ],
+      "phase": "product-validation"
+    },
+    {
+      "id": "LS-040",
+      "title": "Rehearse migration, backup and crash recovery",
+      "body": "## Goal\nRehearse migration, backup and crash recovery for LoadSentry; deliver the bounded outcome below within 10 hours including verification and documentation.\n\n## Steps\n1. Back up a generated workspace, migrate schema, interrupt processing and restore.\n2. document artifact compatibility and bounded storage recovery.\n\n## Outputs\nPaths relative to the future product repository: scripts/backup.ps1; scripts/restore.ps1; reports/recovery-drill.md.\n\n## Acceptance checks\nRestore produces matching reviewed exports; interrupted jobs stay visibly failed until explicit retry; backups honor stated retention.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-037, LS-038, LS-039\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 10,
+      "milestone": "LS-M7",
+      "depends_on": [
+        "LS-037",
+        "LS-038",
+        "LS-039"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:product-validation"
+      ],
+      "phase": "product-validation"
+    },
+    {
+      "id": "LS-041",
+      "title": "Evaluate product usage and uncertainty honestly",
+      "body": "## Goal\nEvaluate product usage and uncertainty honestly for LoadSentry; deliver the bounded outcome below within 10 hours including verification and documentation.\n\n## Steps\n1. Aggregate local opt-in task completion, repeat review sessions, time saved and unresolved-item rate.\n2. if no external use exists, analyze generated rehearsal only.\n\n## Outputs\nPaths relative to the future product repository: reports/adoption-evidence.json; docs/PRODUCT_METRICS.md.\n\n## Acceptance checks\nUser count, repeat-use count and evidence provenance are reported with denominators; downloads and synthetic scores are not willingness-to-pay proxies.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-036, LS-040\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 10,
+      "milestone": "LS-M7",
+      "depends_on": [
+        "LS-036",
+        "LS-040"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:product-validation"
+      ],
+      "phase": "product-validation"
+    },
+    {
+      "id": "LS-042",
+      "title": "Bound potential service economics and paid scope",
+      "body": "## Goal\nBound potential service economics and paid scope for LoadSentry; deliver the bounded outcome below within 8 hours including verification and documentation.\n\n## Steps\n1. Estimate installation/support time from rehearsals.\n2. outline per-site support or CSV adapter offer only if repeat-use evidence exists.\n3. verify data/code rights for each proposed commercial deliverable.\n\n## Outputs\nPaths relative to the future product repository: docs/SERVICE_HYPOTHESIS.md; reports/commercial-rights-gate.md.\n\n## Acceptance checks\nNo revenue or buyer claim without evidence; proposed scope excludes control/diagnosis; unknown rights block commercial packaging.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-041\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 8,
+      "milestone": "LS-M7",
+      "depends_on": [
+        "LS-041"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:product-validation"
+      ],
+      "phase": "product-validation"
+    },
+    {
+      "id": "LS-043",
+      "title": "Re-run frozen regression and failure-case review",
+      "body": "## Goal\nRe-run frozen regression and failure-case review for LoadSentry; deliver the bounded outcome below within 12 hours including verification and documentation.\n\n## Steps\n1. Reproduce baselines and selected model on frozen snapshots.\n2. run supported schema, DST, sparse-meter and corruption slices.\n3. compare to v0.1 metrics with uncertainty.\n\n## Outputs\nPaths relative to the future product repository: reports/v1-regression.json; docs/KNOWN_FAILURES.md.\n\n## Acceptance checks\nEvery regression has disposition; changed split/generator version is documented; preserved holdout is not reused for tuning.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-038, LS-040, LS-041\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 12,
+      "milestone": "LS-M8",
+      "depends_on": [
+        "LS-038",
+        "LS-040",
+        "LS-041"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:handoff"
+      ],
+      "phase": "handoff"
+    },
+    {
+      "id": "LS-044",
+      "title": "Audit dependencies, licenses and update procedure",
+      "body": "## Goal\nAudit dependencies, licenses and update procedure for LoadSentry; deliver the bounded outcome below within 10 hours including verification and documentation.\n\n## Steps\n1. Recheck pinned package/data licenses and advisories.\n2. rehearse one bounded dependency update.\n3. generate fresh SBOM and retain previous lock for rollback.\n\n## Outputs\nPaths relative to the future product repository: release/sbom.json; reports/update-drill.md.\n\n## Acceptance checks\nNo new asset bypasses rights approval; smoke, export and privacy checks pass after update or old version is retained with rationale.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-042, LS-043\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 10,
+      "milestone": "LS-M8",
+      "depends_on": [
+        "LS-042",
+        "LS-043"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:handoff"
+      ],
+      "phase": "handoff"
+    },
+    {
+      "id": "LS-045",
+      "title": "Finalize operating instructions and support boundaries",
+      "body": "## Goal\nFinalize operating instructions and support boundaries for LoadSentry; deliver the bounded outcome below within 8 hours including verification and documentation.\n\n## Steps\n1. Write installation, local backup, troubleshooting, deletion, model rollback and support scope.\n2. link common errors to recovery commands.\n\n## Outputs\nPaths relative to the future product repository: docs/OPERATIONS.md; docs/SUPPORT.md.\n\n## Acceptance checks\nAnother reader can execute generated-data recovery from instructions; issue template requests redacted diagnostics only.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-040, LS-044\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 8,
+      "milestone": "LS-M8",
+      "depends_on": [
+        "LS-040",
+        "LS-044"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:handoff"
+      ],
+      "phase": "handoff"
+    },
+    {
+      "id": "LS-046",
+      "title": "Prepare the final reproducible product evidence bundle",
+      "body": "## Goal\nPrepare the final reproducible product evidence bundle for LoadSentry; deliver the bounded outcome below within 10 hours including verification and documentation.\n\n## Steps\n1. Collect install proof, metrics, limitations, user evidence status and rights decisions into versioned release candidate.\n2. verify hashes and remove accidental data payloads.\n\n## Outputs\nPaths relative to the future product repository: release/v1-candidate.json; reports/product-evidence.md.\n\n## Acceptance checks\nBundle reproduces locally and distinguishes technical, workflow and market evidence; no private files or unapproved weights are included.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-041, LS-043, LS-044, LS-045\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 10,
+      "milestone": "LS-M8",
+      "depends_on": [
+        "LS-041",
+        "LS-043",
+        "LS-044",
+        "LS-045"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:handoff"
+      ],
+      "phase": "handoff"
+    },
+    {
+      "id": "LS-047",
+      "title": "Make the month-twelve continue, narrow or stop decision",
+      "body": "## Goal\nMake the month-twelve continue, narrow or stop decision for LoadSentry; deliver the bounded outcome below within 8 hours including verification and documentation.\n\n## Steps\n1. Compare evidence with predefined utility, adoption and rights gates.\n2. choose maintained OSS, permissioned service investigation or parked artifact.\n3. budget any future work separately.\n\n## Outputs\nPaths relative to the future product repository: reports/month12-decision.md.\n\n## Acceptance checks\nDecision includes actual hours/reserve, unmet gates and explicit future scope; absence of customers cannot be called product validation.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-042, LS-046\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 8,
+      "milestone": "LS-M8",
+      "depends_on": [
+        "LS-042",
+        "LS-046"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:handoff"
+      ],
+      "phase": "handoff"
+    },
+    {
+      "id": "LS-048",
+      "title": "Execute maintenance handoff or archive rehearsal",
+      "body": "## Goal\nExecute maintenance handoff or archive rehearsal for LoadSentry; deliver the bounded outcome below within 8 hours including verification and documentation.\n\n## Steps\n1. Tag the approved final artifact or frozen parked release.\n2. verify clean install and rollback.\n3. document shutdown and optional future maintenance allocation within global capacity.\n\n## Outputs\nPaths relative to the future product repository: docs/HANDOFF.md; release/final-manifest.json.\n\n## Acceptance checks\nRunnable artifact, reproducible data commands and known limits remain; any ongoing allocation requires activation planning and does not silently consume another project's 16h.\nExecute the listed checks on generated fixtures or explicitly approved assets; record failures and exclusions rather than silently reducing the denominator.\n\n## Dependencies\nLS-047\nRead docs/EXECUTION_PLAN.md and the applicable project instructions before starting. Later milestone work requires the preceding milestone exit decision; the project remains queued until explicitly activated.\n\n## Review evidence\nAttach the diff/commit, exact commands, exit status, relevant output or report excerpt, asset/config hashes when applicable, measured results versus the acceptance checks, and actual hours/reserve draw. For decision-only work, attach the evidence-linked decision and validate every referenced artifact. Mark unexecuted benchmarks and unavailable external validation explicitly.\n\n## Blocker procedure\nStop the blocked branch; capture the minimal reproduction, error/output and affected dependency. Continue independent approved work within the same active project. Propose a smaller supported scope or a split of remaining work within the existing budget; record reserve use for unplanned rework. Escalate unresolved rights, architecture, budget or release-gate changes with options and consequences before crossing the boundary. Unresolved dataset rights require exclusion and independently generated fixtures; do not silently assume the license. Do not close the issue until its acceptance checks pass or an explicit reviewed scope change records the replacement outcome.",
+      "estimate_hours": 8,
+      "milestone": "LS-M8",
+      "depends_on": [
+        "LS-047"
+      ],
+      "labels": [
+        "type:task",
+        "priority:P1",
+        "status:queued",
+        "phase:handoff"
+      ],
+      "phase": "handoff"
+    }
+  ]
+}
+
